@@ -14,6 +14,8 @@ const users = require('../controllers/users/users')
 // routes 
 
 const route_users = require('../routes/users')
+const route_tasks = require('../routes/tasks')
+
 
 
 //require('')
@@ -31,10 +33,17 @@ app.use(express.static(pageDirectory))
 app.use(session({
     secret: 'key1',
     resave: false,
-    saveUninitialized:false
+    saveUninitialized:false,
+    cookie: {
+ 
+        // Session expires after 1 min of inactivity.
+        expires: ((60 * 1000) * 60 )
+    }
 }))
 
 app.use(route_users);
+app.use(route_tasks);
+
 
 // app.get('/', (req, res) => {
 

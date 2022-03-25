@@ -9,8 +9,8 @@ exports.getlist = async (req, body_res) => {
     // }
     // else {
 
-        body_res.render('users_update', {
-            title: 'Users',
+        body_res.render('tasks', {
+            title: 'This is tasks page',
             users_list: 'res'
         })
 
@@ -81,7 +81,7 @@ exports.login = (req, res) => {
     // }
 
 }
-exports.addusers = (req, res) => {
+exports.addtasks = (req, res) => {
 
     //req.session.already_logged = 'true';
     //console.log(req.session.already_logged);
@@ -92,8 +92,8 @@ exports.addusers = (req, res) => {
     // }
     // else {
         console.log('Controller: Login Page Loaded');
-        res.render('addusers', {
-            title: 'this is add users page'
+        res.render('addtasks', {
+            title: 'this is add tasks page'
         })
     // }
 
